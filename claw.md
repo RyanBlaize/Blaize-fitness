@@ -96,46 +96,48 @@ BlaizeFitnessinc@gmail.com
 4617 36th Ave SW, Seattle, WA 98126
 ```
 
-**5. Stats**
-Update the four stats in the stats bar to reflect your real numbers:
+**5. ✅ Stats (DONE)**
 ```html
-<div class="stat-num">200+</div>   ← clients transformed
+<div class="stat-num">100+</div>  ← clients trained
 <div class="stat-num">5★</div>    ← rating
-<div class="stat-num">8yr</div>   ← years experience
+<div class="stat-num">4yr</div>   ← years coaching experience
 <div class="stat-num">100%</div>  ← personalized
 ```
 
-**6. Pricing**
-All packages currently show `$—` with a "contact for pricing" note.
-To add real prices, update each `.package-price` div:
-```html
-<div class="package-price">$299</div>
-<div class="package-price-note">/ month</div>
-```
+**6. ✅ Pricing (DONE)**
+In-person packages (Beginner $280, Moderate $520, Gym Rat $720, all + WA state tax) and online coaching packages (Starter $139, Pro $215, Elite $350) are live, with 55 minute session length and weekly cadence (1/2/3 sessions per week) called out on each card.
 
 **7. ✅ Testimonials (DONE)**
 Real client testimonials from Kristin G., Verne J., and Adele L. are live.
+
+**8. ✅ About Section Story (DONE)**
+Rewritten with Ryan's personal journey (losing 100 pounds, 4 years coaching, mission to create a safe training environment), in a warm conversational tone. A second photo (Ryan coaching an overhead press) was added alongside the original portrait shot.
+
+**9. ✅ TikTok + YouTube Links (DONE)**
+```
+https://www.tiktok.com/@blaize.fitness
+https://www.youtube.com/@BlaizeFitness
+```
+Added to the contact section's social links, alongside Instagram.
 
 ---
 
 ## Photography
 
-All images currently use **Unsplash** (free, no attribution required for commercial use):
+All images are now **real Blaize Fitness photos**, embedded directly in the HTML as base64 data so no external image hosting is needed:
 
-| Section | URL |
-|---------|-----|
-| Hero background | `unsplash.com/photo-1571019613454` |
-| About split | `unsplash.com/photo-1534438327276` |
-| Gallery main | `unsplash.com/photo-1581009146145` |
-| Gallery 2 | `unsplash.com/photo-1549476464` |
-| Gallery 3 | `unsplash.com/photo-1517836357463` |
-| Gallery 4 | `unsplash.com/photo-1593079831268` |
-| Gallery 5 | `unsplash.com/photo-1526506118085` |
+| Section | Source |
+|---------|--------|
+| Hero background | Solo trainer dramatic shot (Ryan) |
+| About — portrait | Same solo trainer shot, reused |
+| About — second photo | Ryan coaching an overhead press |
+| Gallery (5 images) | Gym interior shots, team photo outside Westside Fitness, trainer + client mirror selfie, solo trainer shot |
+| Testimonial avatars | Initial letter circles (K, V, A) — no photos needed |
 
-To swap in real photos, replace the `src` URL with a direct link to your image. For best quality:
-- Hero: at least 1600px wide
-- Gallery images: at least 800px wide
-- Testimonial avatars: at least 100×100px, square crop
+To swap in a new photo for any section, replace the `src="data:image/jpeg;base64,..."` string with a freshly base64 encoded image. Recommended sizing before encoding to keep file size reasonable:
+- Hero: ~1200px wide
+- About / gallery images: ~800 to 900px wide
+- Always re-export at JPEG quality 70 to 80 for a good size to quality balance
 
 ---
 
@@ -194,7 +196,7 @@ These sections are ready to add when needed:
 - **Booking widget** — Embed Calendly directly in the intake section
 - **Progress photos section** — Before/after grid with client permission
 - **FAQ accordion** — Add above the footer to reduce intake questions
-- **Additional social links** — TikTok, YouTube, Facebook (SVG icons ready to copy from contact section)
+- **Additional social links** — Facebook (SVG icon pattern available, follow the same structure as Instagram/TikTok/YouTube)
 
 ---
 
