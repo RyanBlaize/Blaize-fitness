@@ -111,7 +111,7 @@ In-person packages (Beginner $280, Moderate $520, Gym Rat $720, all + WA state t
 Real client testimonials from Kristin G., Verne J., and Adele L. are live.
 
 **8. ✅ About Section Story (DONE)**
-Rewritten with Ryan's personal journey (losing 100 pounds, 4 years coaching, mission to create a safe training environment), in a warm conversational tone. A second photo (Ryan coaching an overhead press) was added alongside the original portrait shot.
+Rewritten with Ryan's personal journey (losing 100 pounds, 4 years coaching, mission to create a safe training environment), in a warm conversational tone. The About section uses a single portrait photo (solo tricep pose).
 
 **9. ✅ TikTok + YouTube Links (DONE)**
 ```
@@ -119,6 +119,12 @@ https://www.tiktok.com/@blaize.fitness
 https://www.youtube.com/@BlaizeFitness
 ```
 Added to the contact section's social links, alongside Instagram.
+
+**10. ✅ Hero Section (DONE)**
+Background photo replaced with the Blaize Fitness logo, displayed large and centered over a dark radial gradient.
+
+**11. ✅ Gallery (DONE)**
+The overhead press action photo now lives in the gallery grid (6 photos total), above the packages/offer section.
 
 ---
 
