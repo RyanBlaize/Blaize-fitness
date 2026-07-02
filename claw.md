@@ -105,7 +105,7 @@ BlaizeFitnessinc@gmail.com
 ```
 
 **6. ✅ Pricing (DONE)**
-In-person packages (Beginner $280, Moderate $520, Gym Rat $720, all + WA state tax) and online coaching packages (Starter $139, Pro $215, Elite $350) are live, with 55 minute session length and weekly cadence (1/2/3 sessions per week) called out on each card.
+In-person packages (Beginner $190, Moderate $545, Gym Rat $815, all + WA state tax) and online coaching packages (Starter $139, Pro $215, Elite $350) are live, with 55 minute session length and weekly cadence (1/2/3 sessions per week) called out on each card.
 
 **7. ✅ Testimonials (DONE)**
 Real client testimonials from Kristin G., Verne J., and Adele L. are live.
