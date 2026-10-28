@@ -1,6 +1,6 @@
 # Blaize Fitness Website — Build Notes (claw.md)
 
-Updated October 28, 2026. Replaces the previous build notes.
+Updated October 28, 2026 (second update). Replaces the previous build notes.
 
 ## What changed in this version
 - Full redesign: Big Shoulders Display headlines + Hanken Grotesk body, black and white with blush pink (#e9b9bd) taken from the logo wordmark.
@@ -10,8 +10,9 @@ Updated October 28, 2026. Replaces the previous build notes.
 - The Google Form link is replaced by an in-site, 4-step application (format and plan, contact info, goals, story). Every "Apply" button on a plan pre-fills that plan.
 - Quick-question form now actually sends (the old one only cleared the fields).
 - SEO: real page title and description, Open Graph tags, and LocalBusiness structured data (helps Google and AI search).
-- Images recompressed; page is about 820 KB instead of 1.08 MB.
+- Images recompressed; page is about 920 KB instead of 1.08 MB.
 - Footer year updates automatically.
+- My Story photo: the overhead press shot is replaced by a full-frame side-by-side of Ryan before and now, labeled "Before" (black tag) and "Now" (pink tag) in the top-left corner, with the caption "Same guy, 100 pounds apart." The overhead press photo is no longer used anywhere on the site.
 
 ## Section order
 Nav → Hero → Proof row → My story → Two ways to train → In person (plans) → Online coaching (steps, plans, FAQ) → Results → Gallery → Apply → Quick question → Footer
@@ -33,6 +34,13 @@ Fields sent: format, plan, first/last name, email, phone, city/state, contact pr
 ## Pricing (unchanged from the live site)
 In person: Beginner $250, Moderate $545 (Most popular), Gym Rat $815 per month, 55-min sessions, plus WA sales tax.
 Online: Starter $139, Pro $215 (Best value), Elite $350, shown as per month.
+
+## Photos on the page
+- Hero: Ryan in the gym (portrait, tank top)
+- My Story: Before (prom photo) and Now (graduation photo), full frame, 600×800 each
+- Gallery: Ryan with a client, two gym floor shots, West Side Fitness team photo
+
+To swap the before/now photos, keep both the same shape (3:4 portrait). Both photos include other people, so get their OK before the site goes live.
 
 ## Things to confirm
 - Online prices are now labeled "/ month". Change the `<small>/ month</small>` text if they're billed differently.
