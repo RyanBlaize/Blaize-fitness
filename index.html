@@ -253,12 +253,24 @@ h3 { font-size: clamp(26px, 3vw, 34px); font-weight: 800; }
 
 /* ── Results ── */
 .results h2 { margin-bottom: 56px; }
-.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(32px, 4vw, 56px); }
-.quotes figure { border-top: 3px solid var(--blush); padding-top: 28px; }
-.quotes blockquote { font-size: 19px; line-height: 1.55; margin-bottom: 24px; }
-.quotes figcaption { color: var(--stone); font-size: 15px; }
-.quotes figcaption b { display: block; color: var(--white); font-weight: 600; font-size: 16px; }
+.marquee { position: relative; overflow: hidden; margin: 0 calc(var(--gutter) * -1); padding: 4px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); }
+.marquee-track { display: flex; width: max-content; animation: marquee var(--dur, 40s) linear infinite; }
+.marquee:hover .marquee-track, .marquee:focus-within .marquee-track, .marquee.paused .marquee-track { animation-play-state: paused; }
+.marquee-set { display: flex; gap: 20px; padding-right: 20px; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.rev-card { width: min(380px, 80vw); flex: none; background: var(--raised); border: 1px solid var(--line); border-top: 3px solid var(--blush); border-radius: 6px; padding: 28px 28px 24px; display: flex; flex-direction: column; }
+.rev-card blockquote { font-size: 17px; line-height: 1.55; margin-bottom: 20px; flex: 1; }
+.rev-card figcaption { color: var(--stone); font-size: 15px; }
+.rev-card figcaption b { display: block; color: var(--white); font-weight: 600; font-size: 16px; }
+.marquee-hint { margin-top: 16px; font-size: 14px; color: var(--stone); }
 .stars { color: var(--blush); letter-spacing: 3px; font-size: 15px; margin-bottom: 14px; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; padding: 4px var(--gutter); }
+  .marquee-track { animation: none; }
+  .marquee-hint { display: none; }
+}
 
 /* ── Gallery ── */
 .gallery { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: 310px 310px; gap: 4px; }
@@ -393,7 +405,6 @@ footer .tag { font-family: var(--display); font-weight: 800; text-transform: upp
   .light .tier { border-top-color: var(--paper-line); }
   .tier:first-child { border-top: 0; }
   .steps { grid-template-columns: 1fr 1fr; row-gap: 36px; }
-  .quotes { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 220px; }
   .gallery img, .gallery .tall:nth-child(n), .gallery .sq:nth-child(n) { grid-column: auto; grid-row: auto; }
   .gallery .tall:nth-child(n) { grid-row: span 2; }
@@ -467,7 +478,7 @@ footer .tag { font-family: var(--display); font-weight: 800; text-transform: upp
   <div class="wrap">
     <div class="item"><b>100 lb</b><span>Lost on my own journey</span></div>
     <div class="item"><b>100+</b><span>Clients coached</span></div>
-    <div class="item"><b>5.0</b><span>Average client rating</span></div>
+    <div class="item"><b>5.0</b><span>Rating on Google</span></div>
     <div class="item"><b>4 yrs</b><span>Coaching experience</span></div>
   </div>
 </section>
@@ -717,23 +728,59 @@ footer .tag { font-family: var(--display); font-weight: 800; text-transform: upp
 <section class="section results" id="results">
   <div class="wrap">
     <h2>Real people. Real results.</h2>
-    <div class="quotes">
-      <figure>
+    <div class="marquee" id="reviewMarquee" aria-label="Client reviews">
+      <!-- To add a review: copy one <figure class="rev-card"> block below and change the words, name and label. The banner adjusts itself. -->
+      <div class="marquee-track">
+        <div class="marquee-set">
+        <figure class="rev-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>I have been training with Ryan as a remote client for the past seven months. He has devoted the time to know my strengths and limitations. If I am having difficulty with a particular lift, he works with me to find a good alternative. His programming keeps me motivated and challenged. I often get a quick motivational message from him shortly after I finish a workout. In other words, he’s attentive! You can’t go wrong with Ryan as your coach - be it in person or remote.</blockquote>
+        <figcaption><b>Colleen F.</b>Online coaching client</figcaption>
+      </figure>
+        <figure class="rev-card">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote>Ryan explains things clearly, has a plan prepared each time, and his positivity and encouragement allows you to accomplish more than you thought possible. Great range of workouts for athletes.</blockquote>
         <figcaption><b>Kristin G.</b>In-person client</figcaption>
       </figure>
-      <figure>
+        <figure class="rev-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Ryan is punctual and consistent every session, with a real eye for form and progression. He builds well rounded workouts mixing strength work, stretching, and accessory movements, and knows exactly when to push for a new PR versus when to dial things back. Structured, safe, and effective every time.</blockquote>
+        <figcaption><b>Priyam J.</b>Google review</figcaption>
+      </figure>
+        <figure class="rev-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Ryan is an amazing coach with an amazing ability to get the best out of his athletes. He has really amazing workouts and strategies for accomplishing your goals. And connects with all of his clients on a deep personal level.</blockquote>
+        <figcaption><b>Asher S.</b>Athlete</figcaption>
+      </figure>
+        <figure class="rev-card">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote>Ryan was my trainer for about a year at LA Fitness and currently at Westside Fitness. He encourages me, challenges me and sets up a different workout every time, unlike any other trainer I've had.</blockquote>
         <figcaption><b>Verne J.</b>Long-term client</figcaption>
       </figure>
-      <figure>
+        <figure class="rev-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Ryan is an amazing personal trainer and an even better person! Because of Ryan, I look forward to lifting weights. Ryan also works with both my sons, my wife, and my dad. He has developed independent relationships with all of us and we all consider him a friend and part of the family.</blockquote>
+        <figcaption><b>Ryan S.</b>Google review</figcaption>
+      </figure>
+        <figure class="rev-card">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote>After a spinal injury from a car accident, I was nervous to get back into fitness. Ryan entirely changed the trajectory of my journey, creating a safe, supportive environment that helped me face my fears.</blockquote>
         <figcaption><b>Adele L.</b>Recovery and rehabilitation client</figcaption>
       </figure>
+        <figure class="rev-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Ryan is the best! In addition to me, he works with my husband, both my sons and my father in law. We consider him part of the family!</blockquote>
+        <figcaption><b>Britney S.</b>Google review</figcaption>
+      </figure>
+        <figure class="rev-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>I’ve worked out with Ryan for a year and he’s been my favorite coach I’ve had and someone to look up to.</blockquote>
+        <figcaption><b>Ari S.</b>Athlete</figcaption>
+      </figure>
+        </div>
+      </div>
     </div>
+    <p class="marquee-hint">5.0 on Google · Hover or tap to pause · <a href="https://maps.google.com/?cid=12033975392463485729" target="_blank" rel="noopener">Read every review on Google</a></p>
   </div>
 </section>
 
@@ -1017,6 +1064,21 @@ const FORM_ENDPOINT = 'https://formsubmit.co/ajax/BlaizeFitnessinc@gmail.com';
 const CONTACT_EMAIL = 'BlaizeFitnessinc@gmail.com';
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Reviews banner: copy the set once for a seamless loop, speed scales with review count */
+(() => {
+  const mq = document.getElementById('reviewMarquee'); if (!mq) return;
+  const track = mq.querySelector('.marquee-track'); const set = track.querySelector('.marquee-set');
+  const n = set.children.length;
+  // short lists get repeated so the strip is always wider than the screen
+  const reps = Math.max(1, Math.ceil(6 / n));
+  const base = [...set.children];
+  for (let r = 1; r < reps; r++) base.forEach(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden','true'); set.appendChild(k); });
+  const copy = set.cloneNode(true); copy.setAttribute('aria-hidden','true'); track.appendChild(copy);
+  track.style.setProperty('--dur', (set.children.length * 9) + 's');
+  mq.addEventListener('click', () => mq.classList.toggle('paused'));
+})();
+
 
 /* Mobile menu */
 const nav = document.getElementById('nav');
